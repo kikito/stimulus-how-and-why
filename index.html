@@ -1,0 +1,763 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+
+    <title>Stimulus: How and Why</title>
+
+    <meta name="description" content="On this talk I explore what is stimulus.js, what can it do, and how to use it in the context of a Rails App">
+    <meta name="author" content="Enrique García Cota">
+
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/kikito.css" id="theme">
+
+    <!-- Code syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/vs.css">
+
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <div class="reveal">
+
+      <!-- Any section element inside of this container is displayed as a slide -->
+      <div class="slides">
+
+        <section data-markdown data-separator="\*\*\*">
+          <script type="text/template">
+
+<!-- .slide: data-background="./img/title.jpg" -->
+
+# Stimulus:
+## How & Why
+
+<div class="subtitle">
+  <p><small>Enrique García Cota (kikito)</small></p>
+  <p><small><a href="http://www.madridrb.com/events/marzo-2018-434">Madrid.rb 2018</a></small></p>
+</blockquote>
+
+***
+
+
+***
+
+<!-- .slide: data-background="#008AB8" -->
+
+## I. Intro / Why
+## II. How
+## III. End / More Why
+
+***
+
+<!-- .slide: data-background="#008AB8" -->
+
+# I. Intro
+
+***
+
+<figure class="stretch">
+  <img src="./img/front-back-1.jpg" class="stretch" height="100%">
+</figure>
+
+***
+
+<figure class="stretch">
+  <img src="./img/front-back-2.png" class="stretch" height="100%">
+</figure>
+
+***
+
+<figure class="stretch">
+  <img src="./img/front-back-3.png" class="stretch" height="100%">
+</figure>
+
+***
+
+<figure class="stretch">
+  <img src="./img/front-back-4.png" class="stretch" height="100%">
+</figure>
+
+***
+
+<figure class="stretch">
+  <img src="./img/front-back-5.png" class="stretch" height="100%">
+</figure>
+
+***
+
+<figure class="stretch">
+  <img src="./img/truth1.jpg" class="stretch" height="100%">
+</figure>
+
+***
+
+<figure class="stretch">
+  <img src="./img/truth2.jpg" class="stretch" height="100%">
+</figure>
+
+***
+
+```
+GET http://example.com/index.html
+GET http://example.com/favicon.ico
+[click link]
+GET http://example.com/customer_service.html
+[fill form, press "send"]
+POST http://example.com/send_mail.php
+```
+
+***
+
+<figure class="stretch">
+  <img src="./img/inbox.gif" class="stretch" height="100%">
+</figure>
+
+***
+
+<figure class="stretch">
+  <img src="./img/state.jpg" class="stretch" height="100%">
+</figure>
+
+***
+
+``` html
+<!-- HTML4 and (x)HTML -->
+< script type="text/javascript" src="file.js">< /script>
+
+<!-- HTML5 -->
+< script src="file.js">< /script>
+```
+
+***
+
+``` html
+< script src="file1.js">< /script>
+< script src="file2.js">< /script>
+< script src="file3.js">< /script>
+< script src="file4.js">< /script>
+< script src="file5.js">< /script>
+< script src="file6.js">< /script>
+```
+
+***
+
+``` html
+< script src="file1.js">< /script> ⚠️
+< script src="file2.js">< /script>
+< script src="file3.js">< /script>
+< script src="file4.js">< /script> ☝️
+< script src="file5.js">< /script>
+< script src="file6.js">< /script>
+```
+
+***
+
+<figure class="stretch">
+  <img src="./img/network.png" class="stretch" height="100%">
+</figure>
+
+***
+
+<!-- .slide: data-background="./img/webpack.jpg" -->
+
+## Webpack
+
+***
+
+<!-- .slide: data-background="./img/webpack.jpg" -->
+
+## Webpack ✅ ✅
+
+***
+
+FIXME: ie6 logo
+
+***
+
+FIXME: maybe add a lot of logos with rolling releases?
+
+***
+
+FIXME: add logos of javascript versions
+
+***
+
+FIXME: transpiler logos
+
+***
+
+<figure class="stretch">
+  <img src="./img/dom.jpg" class="stretch" height="100%">
+</figure>
+
+***
+
+```
+{ "language": "JSON",
+  "multiline": false,
+  "schema": false,
+  "comments": false,
+  "binary": false,
+  "slightly_verbose": true
+}
+```
+
+***
+
+<figure class="stretch">
+  <img src="./img/css.gif" class="stretch" height="100%">
+</figure>
+
+
+***
+
+FIXME: logos of javascript frameworks
+
+***
+
+FIXME: node logo
+
+***
+
+<!-- .slide: data-background="./img/chaos.jpg" -->
+
+***
+
+<!-- .slide: data-background="#008AB8" -->
+
+# II. How
+
+***
+
+## [stimulusjs.org](https://stimulusjs.org)
+
+* [stimulusjs.org/handbook](https://stimulusjs.org/handbook)
+* [discourse.stimulusjs.org](https://discourse.stimulusjs.org)
+
+***
+
+<img src="./img/rails.jpg" class="stretch" height="30%"> ?
+
+***
+
+``` sh
+# Rails 5.1+
+$ rails new myapp --webpack=stimulus
+
+```
+
+***
+
+``` ruby
+# Gemfile
+gem 'webpacker'
+```
+
+``` sh
+$ bundle install
+$ rails webpacker:install
+$ rails webpacker:install:stimulus
+$ rails g scaffold pages
+$ rails db:migrate
+
+```
+
+***
+
+``` html
+<div>
+  <input type="text">
+  <button>Greet</button>
+</div>
+
+```
+
+***
+
+```
+<div data-controller="hello">
+  <input data-target="hello.input" type="text">
+  <button data-action="click->hello#greet">Greet</button>
+</div>
+```
+
+***
+
+```
+<div data-controller="hello">
+  <input data-target="hello.input" type="text">
+  <button data-action="click->hello#greet">Greet</button>
+</div>
+```
+
+``` javascript
+// hello_controller.js
+import { Controller } from "stimulus"
+
+export default class extends Controller {
+  static targets = [ "input" ]
+
+  greet() {
+    console.log(`Hello, ${this.inputTarget.value}!`);
+  }
+}
+```
+
+***
+```
+<div data-controller="hello">
+  <input data-target="hello.input" type="text">
+  <button data-action="click->hello#greet">Greet</ button>
+  <span data-target="hello.output"></ span>
+</div>
+```
+
+``` javascript
+// hello_controller.js
+import { Controller } from "stimulus"
+
+export default class extends Controller {
+  static targets = [ "input", "output" ]
+
+  greet() {
+    this.outputTarget.textContent =
+      `Hello, ${this.inputTarget.value}!`;
+  }
+}
+```
+
+***
+
+### Actions
+
+``` html
+<div data-controller="hello">
+  <button data-action="click->hello#greet">
+</div>
+```
+
+``` javascript
+// hello_controller.js
+export default class extends Controller {
+  greet() {
+    ...
+  }
+}
+```
+
+***
+
+### Actions
+
+``` html
+<[tag] data-controller="my-ctrl">
+  <[tag] data-action="[event]->[my-ctrl]#[my-method]">
+</[tag]
+```
+
+``` javascript
+// my_ctrl.js
+export default class extends Controller {
+  my_method() {
+    ...
+  }
+}
+```
+
+***
+
+### Actions
+
+``` html
+<[tag] data-controller="my-ctrl">
+  <[tag] data-action="[my-ctrl]#[my-method]">
+</[tag]
+```
+
+``` plain
+        | Element           | Default event |
+        +-------------------+---------------+
+        | a                 | click         |
+        | button            | click         |
+        | form              | submit        |
+        | input             | change        |
+        | input type=submit | click         |
+        | select            | change        |
+        | textarea          | change        |
+```
+***
+
+### Targets
+
+``` html
+<div data-controller="hello">
+  <input data-target="hello.input" type="text">
+  ...
+  <span data-target="hello.output"></span>
+</div>
+```
+
+``` javascript
+// hello_controller.js
+export default class extends Controller {
+  static targets = [ "input", "output" ]
+
+  // pointers to DOM elements inside the
+  // controller's element
+  ... this.inputTarget ... this.outputTarget
+}
+```
+
+***
+### Controllers
+``` html
+<div data-controller="hello">
+```
+
+``` javascript
+// hello_controller.js
+
+export default class extends Controller {
+   ...
+}
+```
+***
+### Controllers
+
+* `this.element`
+
+***
+
+### Controllers
+
+* `this.element`
+* `this.data.get("property")`
+* `this.data.set("property")`
+* `this.data.has("property")`
+
+***
+
+``` javascript
+this.data.get("prop") ==
+this.element.getAttribute("data-hello-prop")
+```
+
+***
+
+``` html
+<div data-controller="guess" data-guess-secret="42">
+  <input data-target="guess.input" type="text">
+  <button data-action="click->guess#guess">Send</button>
+  <span data-target="guess.output"></span>
+</div>
+```
+
+***
+
+```
+import { Controller } from "stimulus"
+
+export default class extends Controller {
+  static targets = [ "input", "output" ]
+
+  guess() {
+    var secret = parseInt(this.data.get("secret"));
+    var number = parseInt(this.inputTarget.value);
+    this.outputTarget.textContent =
+      number < secret ? "☝️☝️☝️" :
+      number > secret ? "👇👇👇" :
+      "👌👌👌";
+  }
+}
+```
+
+***
+
+<figure class="stretch plain">
+  <img src="./img/guess.gif" class="stretch plain" height="100%">
+</figure>
+
+***
+
+<figure class="stretch">
+  <img src="./img/truth2.jpg" class="stretch" height="100%">
+</figure>
+
+***
+
+``` html
+<div data-controller="guess"
+     data-guess-secret="<%= 1 + rand(100) %>">
+  <input data-target="guess.input" type="text">
+  <button data-action="click->guess#guess">Send</button>
+  <span data-target="guess.output"></span>
+</div>
+```
+
+***
+
+### Controllers
+
+* `this.element`
+* `this.data.*`
+* `initialize()`
+
+***
+
+``` html
+<div data-controller="guess"><!-- no secret -->
+  <input data-target="guess.input" type="text">
+  <button data-action="click->guess#guess">Send</button>
+  <span data-target="guess.output"></span>
+</div>
+```
+
+***
+
+```
+import { Controller } from "stimulus"
+
+export default class extends Controller {
+  static targets = [ "input", "output" ]
+  initialize() {
+    this.secret = Math.floor(Math.random() * 100) + 1;
+  }
+
+  guess() {
+    var number = parseInt(this.inputTarget.value)
+    this.outputTarget.textContent =
+      number < this.secret ? "☝️☝️☝️" :
+      number > this.secret ? "👇👇👇" :
+      "👌👌👌"
+  }
+}
+```
+
+***
+
+## Controllers
+
+* `this.element`
+* `this.data.*`
+* `initialize()`
+* `connect()` / `disconnect()`
+
+***
+
+<figure class="stretch">
+  <img src="./img/momentjs.png" class="stretch" height="100%">
+</figure>
+
+***
+
+<figure class="stretch">
+  <img src="./img/momentjs-2.png" class="stretch" height="100%">
+</figure>
+
+***
+
+``` html
+<span data-controller="ago"
+      data-ago-time="2018-01-13 12:00"></span>
+```
+
+``` javascript
+// ago_controller.js
+import { Controller } from "stimulus"
+
+export default class extends Controller {
+  initialize() {
+    let time = this.data("time")
+    this.element.textContent =
+      moment(time, "YYYY-MM-DD HH:mm").fromNow();
+  }
+}
+```
+
+***
+
+<figure class="stretch">
+  <img src="./img/turbolinks.png" class="stretch" height="100%">
+</figure>
+
+***
+
+<figure class="stretch plain">
+  <img src="./img/turbolinks.gif" class="stretch plain" height="100%">
+</figure>
+
+<small>https://www.puzzle.ch/blog/articles/2017/05/31/good-enough-%E2%81%BD%E2%81%BE-performance</small>
+
+***
+
+``` html
+<span data-controller="ago"
+      data-ago-time="2018-01-13 12:00"></span>
+```
+
+``` javascript
+// ago_controller.js
+import { Controller } from "stimulus"
+
+export default class extends Controller {
+  initialize() {
+    set_time()
+  }
+
+  connect() {
+    set_time()
+  }
+
+  set_time() {
+    let time = this.data("time")
+    this.element.textContent =
+      moment(time, "YYYY-MM-DD HH:mm").fromNow();
+  }
+}
+
+```
+
+***
+
+### In rails < 5.1
+
+***
+
+``` html
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  < script src="/js/stimulus.umd.js">< /script>
+  < script>
+    (() => {
+      const application = Stimulus.Application.start()
+
+      application.register("hello",
+        class extends Stimulus.Controller {
+          static get targets() {
+            return [ "input" ]
+          }
+          ...
+      });
+    })();
+  </ script>
+</head>
+...
+</html>
+```
+
+***
+
+``` javascript
+// Application.js
+
+//= require stimulus.umd.js
+//= require stimulus_app.js
+//= require hello_controller.js
+
+```
+
+``` javascript
+// stimulus_app.js
+const application = Stimulus.Application.start()
+```
+
+```javascript
+// hello_controller.js
+application.register("hello",
+  class extends Stimulus.Controller {
+    static get targets() {
+      return [ "input" ]
+    }
+    ...
+  }
+);
+```
+
+***
+
+# Conclusion
+
+***
+
+
+
+***
+
+# ¿Questions?
+
+### Enrique García Cota
+### [@otikik](https://twitter.com/otikik) / [kikito](https://github.com/kikito)
+
+***
+
+<!-- .slide: data-background="./img/thank-you.jpg" -->
+
+          </script>
+        </section>
+      </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+
+        width: 960,
+        height: 700,
+
+        margin: 0.1,
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: 0.2,
+        maxScale: 1,
+
+        center: true,
+
+        theme: 'kikito',
+        transition: 'fade', // default/cube/page/concave/zoom/linear/fade/none
+        transitionSpeed: 'fast',
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+          { src: 'plugin/highlight/highlight.js', async: true, condition: function() { return true; }, callback: function() { hljs.initHighlightingOnLoad(); } },
+          { src: 'plugin/zoom-js/zoom.js', async: true },
+          { src: 'plugin/notes/notes.js', async: true }
+        ]
+      });
+
+    </script>
+
+  </body>
+</html>
