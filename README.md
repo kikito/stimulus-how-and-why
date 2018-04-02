@@ -1,3 +1,4 @@
-# Measuring Lua's Performance
+# Stimulus - How and Why
 
-This is the source code of a presentation about Lua and Performance I will be doing in [the Lua Workshop 2017](https://www.lua.org/wshop17.html)
+Slides for my talk about [stimulus](https://stimulusjs.org/) in [madrid.rb](http://www.madridrb.com/events/marzo-2018-434)
+
