@@ -105,6 +105,18 @@
 ***
 
 <figure class="stretch">
+  <img src="./img/geocities.png" class="stretch" height="100%">
+</figure>
+
+***
+
+<figure class="stretch">
+  <img src="./img/inbox.gif" class="stretch" height="100%">
+</figure>
+
+***
+
+<figure class="stretch">
   <img src="./img/truth1.jpg" class="stretch" height="100%">
 </figure>
 
@@ -116,33 +128,26 @@
 
 ***
 
-```
-GET http://example.com/index.html
-GET http://example.com/favicon.ico
-[click link]
-GET http://example.com/customer_service.html
-[fill form, press "send"]
-POST http://example.com/send_mail.php
-```
-
-***
-
-<figure class="stretch">
-  <img src="./img/inbox.gif" class="stretch" height="100%">
-</figure>
-
-***
-
 <figure class="stretch">
   <img src="./img/state.jpg" class="stretch" height="100%">
 </figure>
 
 ***
 
+```
+GET http://example.com/file.js
+```
+
+***
+
 ``` html
 <!-- HTML4 and (x)HTML -->
 < script type="text/javascript" src="file.js">< /script>
+```
 
+***
+
+```
 <!-- HTML5 -->
 < script src="file.js">< /script>
 ```
@@ -160,6 +165,13 @@ POST http://example.com/send_mail.php
 
 ***
 
+<!-- .slide: data-background="./img/global.jpg" -->
+
+## Everything is
+# Global
+
+***
+
 ``` html
 < script src="file1.js">< /script> ⚠️
 < script src="file2.js">< /script>
@@ -167,6 +179,11 @@ POST http://example.com/send_mail.php
 < script src="file4.js">< /script> ☝️
 < script src="file5.js">< /script>
 < script src="file6.js">< /script>
+```
+***
+
+``` javascript
+< script src="script.js">< /script>
 ```
 
 ***
@@ -189,19 +206,43 @@ POST http://example.com/send_mail.php
 
 ***
 
-FIXME: ie6 logo
+<figure class="stretch">
+  <img src="./img/ie6.png" class="plain" height="100%">
+</figure>
 
 ***
 
-FIXME: maybe add a lot of logos with rolling releases?
+<figure class="stretch">
+  <img src="./img/outdatedbrowser.com.gif" class="stretch" height="100%">
+</figure>
+
+http://outdatedbrowser.com
 
 ***
 
-FIXME: add logos of javascript versions
+<figure class="stretch">
+  <img src="./img/javascript-animal.jpg" class="stretch" height="100%">
+</figure>
+
+***
+
+<figure class="stretch">
+  <img src="./img/ecmascript.png" class="stretch plain" height="100%">
+</figure>
+
+https://segment.com/blog/the-deep-roots-of-js-fatigue/
 
 ***
 
 FIXME: transpiler logos
+
+***
+
+<figure class="stretch">
+  <img src="./img/babel.gif" class="stretch plain" height="100%">
+</figure>
+
+https://babeljs.io/
 
 ***
 
@@ -211,22 +252,16 @@ FIXME: transpiler logos
 
 ***
 
-```
-{ "language": "JSON",
-  "multiline": false,
-  "schema": false,
-  "comments": false,
-  "binary": false,
-  "slightly_verbose": true
-}
-```
-
-***
-
 <figure class="stretch">
   <img src="./img/css.gif" class="stretch" height="100%">
 </figure>
 
+***
+
+* use classes for css
+* use data-* for javascript
+* don't use ids
+* ✅ ✅
 
 ***
 
@@ -344,6 +379,12 @@ export default class extends Controller {
   }
 }
 ```
+
+***
+
+<figure class="stretch plain">
+  <img src="./img/guess.gif" class="stretch plain" height="100%">
+</figure>
 
 ***
 
@@ -638,6 +679,12 @@ export default class extends Controller {
 
 ***
 
+<figure class="stretch">
+  <img src="./img/state.jpg" class="stretch" height="100%">
+</figure>
+
+***
+
 ### In rails < 5.1
 
 ***
@@ -669,8 +716,7 @@ export default class extends Controller {
 ***
 
 ``` javascript
-// Application.js
-
+// app/assets/javascripts/application.js
 //= require stimulus.umd.js
 //= require stimulus_app.js
 //= require hello_controller.js
@@ -696,11 +742,66 @@ application.register("hello",
 
 ***
 
+``` javascript
+// app/assets/javascripts/application.js
+//= require stimulus.umd.js
+//= require stimulus_app.js
+//= require classtrophobic-es5.js
+//= require hello_controller.js
+
+```
+
+``` javascript
+// stimulus_app.js
+const application = Stimulus.Application.start()
+```
+
+```javascript
+// hello_controller.js
+application.register("hello",
+  Class({
+    extends: Stimulus.controller,
+    static: {
+      targets: [ "input" ]
+    }
+    ...
+  }
+);
+```
+<small>http://bdavidxyz.com/blog/stimulusjs-with-javascript</small>
+
+***
+
 # Conclusion
 
 ***
 
+``` html
+<html data-is-messy=true></html>
+```
 
+``` xml
+<?xml version="1.0">
+  <soap:Envelope
+   xmlns:soap="http://www.w3.org/2001/soap-envelope"
+   soap:encodingStyle="http://www.w3.org/2001/12/soap-encoding">
+   <soap:Header>
+     <m:trans xmlns:m="http://www.w3schools.com/transaction"
+              soap:mustUnderstand="1">234
+   </soap:Header>
+  </soap:Envelope>
+</xml>
+```
+
+``` json
+{ "language": "JSON",
+  "multiline": false,
+  "schema": false,
+  "comments": false,
+  "binary": false,
+  "slightly_verbose": true
+}
+```
 
 ***
 
