@@ -57,6 +57,9 @@
 
 ***
 
+<!-- .slide: data-background="#008AB8" -->
+
+https://kikito.github.io/stimulus-how-and-why
 
 ***
 
@@ -64,7 +67,7 @@
 
 ## I. Intro / Why
 ## II. How
-## III. End / More Why
+## III. Conclusion / More Why
 
 ***
 
@@ -111,6 +114,12 @@
 ***
 
 <figure class="stretch">
+  <img src="./img/rotating-title.gif" class="stretch" height="100%">
+</figure>
+
+***
+
+<figure class="stretch">
   <img src="./img/inbox.gif" class="stretch" height="100%">
 </figure>
 
@@ -135,20 +144,6 @@
 ***
 
 ```
-GET http://example.com/file.js
-```
-
-***
-
-``` html
-<!-- HTML4 and (x)HTML -->
-< script type="text/javascript" src="file.js">< /script>
-```
-
-***
-
-```
-<!-- HTML5 -->
 < script src="file.js">< /script>
 ```
 
@@ -181,27 +176,15 @@ GET http://example.com/file.js
 ```
 ***
 
-``` javascript
+``` html
 < script src="script.js">< /script>
 ```
-
-***
-
-<figure class="stretch">
-  <img src="./img/network.png" class="stretch" height="100%">
-</figure>
 
 ***
 
 <!-- .slide: data-background="./img/webpack.jpg" -->
 
 ## Webpack
-
-***
-
-<!-- .slide: data-background="./img/webpack.jpg" -->
-
-## Webpack ✅ ✅
 
 ***
 
@@ -222,6 +205,8 @@ http://outdatedbrowser.com
 <figure class="stretch">
   <img src="./img/javascript-animal.jpg" class="stretch plain" height="100%">
 </figure>
+
+### javascript
 
 ***
 
@@ -269,6 +254,13 @@ https://babeljs.io/
 ### Handling Events in the DOM
 
 ***
+
+<!-- .slide: data-background="./img/global.jpg" -->
+
+# Global
+
+***
+
 
 <figure class="stretch">
   <img src="./img/css.gif" class="stretch" height="100%">
@@ -377,7 +369,7 @@ export default class extends Controller {
 ```
 <div data-controller="hello">
   <input data-target="hello.input" type="text">
-  <button data-action="click->hello#greet">Greet</ button>
+  <button data-action="click->hello#greet">Greet</button>
   <span data-target="hello.output"></ span>
 </div>
 ```
@@ -399,7 +391,7 @@ export default class extends Controller {
 ***
 
 <figure class="stretch plain">
-  <img src="./img/guess.gif" class="stretch plain" height="100%">
+  <img src="./img/stimulus-example.png" class="stretch plain" height="100%">
 </figure>
 
 ***
@@ -555,12 +547,6 @@ export default class extends Controller {
 
 ***
 
-<figure class="stretch">
-  <img src="./img/truth2.jpg" class="stretch" height="100%">
-</figure>
-
-***
-
 ``` html
 <div data-controller="guess"
      data-guess-secret="<%= 1 + rand(100) %>">
@@ -692,13 +678,6 @@ export default class extends Controller {
 }
 
 ```
-
-***
-
-<figure class="stretch">
-  <img src="./img/state.jpg" class="stretch plain" height="100%">
-</figure>
-
 ***
 
 ### In rails < 5.1
@@ -792,6 +771,14 @@ application.register("hello",
 
 # III. Conclusion
 
+***
+
+<figure class="stretch">
+  <img src="./img/todomvc.png" class="stretch" height="100%">
+</figure>
+
+
+<small>https://github.com/adrienpoly/todomvc_rails_on_stimulus</small>
 
 ***
 
