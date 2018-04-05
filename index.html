@@ -480,35 +480,79 @@ export default class extends Controller {
 ### Controllers
 ``` html
 <div data-controller="hello">
+  ...
+</div>
 ```
 
 ``` javascript
 // hello_controller.js
 
 export default class extends Controller {
-   ...
+  ...
 }
 ```
 ***
+
 ### Controllers
 
-* `this.element`
+* actions -> methods
 
 ***
 
 ### Controllers
 
-* `this.element`
-* `this.data.get("property")`
-* `this.data.set("property")`
-* `this.data.has("property")`
+* actions -> methods
+* `this`
 
 ***
 
-``` javascript
-this.data.get("prop") ==
-this.element.getAttribute("data-hello-prop")
+### Controllers
+
+* actions -> methods
+* `this.xxxTarget`
+
+***
+
+### Controllers
+
+* actions -> methods
+* `this.xxxTarget`
+* `this.element`
+
+***
+
+``` html
+<div data-controller="hello">
+  ...
+</div>
 ```
+
+***
+
+### Controllers
+
+* actions -> methods
+* `this.xxxTarget`
+* `this.element`
+* `this.data.*`
+
+***
+
+### Controllers
+
+* actions -> methods
+* `this.xxxTarget`
+* `this.element`
+* `this.data.*`
+  * `this.data.get("property")`
+  * `this.data.set("property")`
+  * `this.data.has("property")`
+
+***
+
+<figure class="stretch plain">
+  <img src="./img/guess.gif" class="stretch plain" height="100%">
+</figure>
 
 ***
 
@@ -523,6 +567,7 @@ this.element.getAttribute("data-hello-prop")
 ***
 
 ```
+// guess_controller.js
 import { Controller } from "stimulus"
 
 export default class extends Controller {
@@ -541,12 +586,6 @@ export default class extends Controller {
 
 ***
 
-<figure class="stretch plain">
-  <img src="./img/guess.gif" class="stretch plain" height="100%">
-</figure>
-
-***
-
 ``` html
 <div data-controller="guess"
      data-guess-secret="<%= 1 + rand(100) %>">
@@ -558,8 +597,20 @@ export default class extends Controller {
 
 ***
 
+``` javascript
+this.data.get("prop") ==
+this.element.getAttribute("data-hello-prop")
+
+this.xxxTarget ==
+this.element.querySelector("[data-target='xxx']")[0]
+```
+
+***
+
 ### Controllers
 
+* actions -> methods
+* `this.xxxTarget`
 * `this.element`
 * `this.data.*`
 * `initialize()`
@@ -577,6 +628,7 @@ export default class extends Controller {
 ***
 
 ```
+// guess_controller.js
 import { Controller } from "stimulus"
 
 export default class extends Controller {
@@ -599,6 +651,8 @@ export default class extends Controller {
 
 ## Controllers
 
+* actions -> methods
+* `this.xxxTarget`
 * `this.element`
 * `this.data.*`
 * `initialize()`
@@ -615,6 +669,20 @@ export default class extends Controller {
 <figure class="stretch">
   <img src="./img/momentjs-2.png" class="stretch" height="100%">
 </figure>
+
+***
+
+``` html
+<span data-controller="ago"
+      data-ago-time="2018-01-13 12:00"></span>
+```
+
+### ↓ ↓ ↓ ↓
+
+``` html
+<span data-controller="ago"
+      data-ago-time="2018-01-13 12:00">1 hour ago</span>
+```
 
 ***
 
@@ -650,6 +718,7 @@ export default class extends Controller {
 
 <small>https://www.puzzle.ch/blog/articles/2017/05/31/good-enough-%E2%81%BD%E2%81%BE-performance</small>
 
+
 ***
 
 ``` html
@@ -666,6 +735,31 @@ export default class extends Controller {
     set_time()
   }
 
+  connect() {
+    set_time()
+  }
+
+  set_time() {
+    let time = this.data("time")
+    this.element.textContent =
+      moment(time, "YYYY-MM-DD HH:mm").fromNow();
+  }
+}
+
+```
+
+***
+
+``` html
+<span data-controller="ago"
+      data-ago-time="2018-01-13 12:00"></span>
+```
+
+``` javascript
+// ago_controller.js
+import { Controller } from "stimulus"
+
+export default class extends Controller {
   connect() {
     set_time()
   }
@@ -783,10 +877,39 @@ application.register("hello",
 ***
 
 <figure class="stretch">
+  <img src="./img/frameworks.png" class="stretch plain" height="100%">
+</figure>
+
+***
+
+<figure class="stretch">
   <img src="./img/dom-events.gif" class="stretch plain" height="100%">
 </figure>
 
 ### Handling Events in the DOM ✅
+
+***
+
+<!-- .slide: data-background="./img/global.jpg" -->
+
+# Global ❌
+
+***
+
+<figure class="stretch">
+  <img src="./img/state.jpg" class="stretch plain" height="100%">
+</figure>
+
+***
+
+<figure class="stretch">
+  <img src="./img/truth2.jpg" class="stretch plain" height="100%">
+</figure>
+
+***
+
+* Others: state via javascript objects
+* Stimulus: the DOM is the state
 
 ***
 
@@ -798,48 +921,12 @@ application.register("hello",
 
 ***
 
-<figure class="stretch">
-  <img src="./img/frameworks.png" class="stretch plain" height="100%">
-</figure>
+* Others: turning JSON into DOM
+* Stimulus: using the existing DOM
 
 ***
 
-<figure class="stretch">
-  <img src="./img/state.jpg" class="stretch plain" height="100%">
-</figure>
-
-***
-
-``` html
-<html data-is-messy=true></html>
-```
-
-``` json
-{ "language": "JSON",
-  "multiline": false,
-  "schema": false,
-  "comments": false,
-  "binary": false,
-  "slightly_verbose": true
-}
-```
-
-``` xml
-<?xml version="1.0">
-  <soap:Envelope
-   xmlns:soap="http://www.w3.org/2001/soap-envelope"
-   soap:encodingStyle="http://www.w3.org/2001/12/soap-encoding">
-   <soap:Header>
-     <m:trans xmlns:m="http://www.w3schools.com/transaction"
-              soap:mustUnderstand="1">234
-   </soap:Header>
-  </soap:Envelope>
-</xml>
-```
-
-***
-
-<!-- .slide: data-background="#000000" -->
+<!-- .slide: data-background="#050505" -->
 
 <figure class="stretch">
   <img src="./img/t2.jpg" class="stretch" height="100%">
